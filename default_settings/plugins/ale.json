@@ -1,0 +1,21 @@
+{
+  "name": "Dense Analysis",
+  "repo": "dense-analysis/ale",
+  "config_text": [
+    "  let g:ale_fix_on_save = 1",
+    "  let g:ale_fixers = {",
+    "        \\   '*': ['remove_trailing_lines', 'trim_whitespace'],",
+    "        \\   'javascript': ['eslint'],",
+    "        \\}",
+    "  function! s:ToggleAleFixOnSave()",
+    "    let g:ale_fix_on_save = !g:ale_fix_on_save",
+    "    if g:ale_fix_on_save",
+    "      echo \"g:ale_fix_on_save ON\"",
+    "    else",
+    "      echo \"g:ale_fix_on_save OFF\"",
+    "    endif",
+    "  endfunction",
+    "  command! AutoFixOnSaveToggle :call s:ToggleAleFixOnSave()"
+  ],
+  "mappings_text": {}
+}

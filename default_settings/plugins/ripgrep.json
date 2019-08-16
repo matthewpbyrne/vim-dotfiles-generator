@@ -1,0 +1,9 @@
+{
+  "name": "RipGrep",
+  "repo": "jremmen/vim-ripgrep",
+  "config_options": [],
+  "mappings_text": [
+    "  nmap <LocalLeader>r :Rg",
+    "  nmap <LocalLeader>wr :Rg <cword><CR>"
+  ]
+}

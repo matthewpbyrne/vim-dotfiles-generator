@@ -1,0 +1,5 @@
+{
+  "name": "fzf",
+  "repo": "junegunn/fzf",
+  "install_options": { "dir": "~/.fzf", "do": "./install --all" }
+}

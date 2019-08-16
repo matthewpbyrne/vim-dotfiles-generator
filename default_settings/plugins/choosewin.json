@@ -1,0 +1,5 @@
+{
+  "name": "Choosewin",
+  "repo": "t9md/vim-choosewin",
+  "config_text": ["  nmap - <Plug>(choosewin)"]
+}

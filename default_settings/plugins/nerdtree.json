@@ -1,0 +1,8 @@
+{
+  "name": "NERDTree",
+  "repo": "scrooloose/nerdtree",
+  "mappings_text": [
+    "  nmap <leader>n :NERDTreeFind<CR>",
+    "  nmap <leader>m :NERDTreeToggle<CR>"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Slime",
+  "repo": "jpalardy/vim-slime",
+  "config_text": ["  let g:slime_target = 'tmux'"]
+}

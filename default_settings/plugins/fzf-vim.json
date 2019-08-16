@@ -1,0 +1,19 @@
+{
+  "name": "fzf-vim",
+  "repo": "junegunn/fzf.vim",
+  "config_options": [],
+  "mappings_text": [
+    "\" file finder mapping",
+    "  nmap <LocalLeader>e :Files<CR>",
+    "\" tags (symbols) in current file finder mapping",
+    "  nmap <LocalLeader>g :BTag<CR>",
+    "\" tags (symbols) in all files finder mapping",
+    "  nmap <LocalLeader>G :Tag<CR>",
+    "\" general code finder in current file mapping",
+    "  nmap <LocalLeader>f :BLines<CR>",
+    "\" general code finder in all files mapping",
+    "  nmap <LocalLeader>F :Lines<CR>",
+    "\" commands finder mapping",
+    "  nmap <LocalLeader>c :Commands<CR>"
+  ]
+}

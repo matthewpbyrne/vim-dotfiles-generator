@@ -1,0 +1,107 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" {{description}}
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+  " Python
+    let g:python3_host_prog = $PYENV_ROOT .  '/versions/py3nvim/bin/python'
+    let g:python_host_prog = $PYENV_ROOT .  '/versions/py2nvim/bin/python'
+
+  " Misc ---------------------------------
+    filetype plugin on    " Enable filetype-specific plugins
+    set background=dark
+    set number                     " Show current line number
+    set relativenumber             " Show relative line numbers
+    set tags=.git/tags
+    syntax enable
+
+  " Tabs and Spaces handling
+    filetype indent on    " Enable filetype-specific indenting
+    set expandtab
+    set shiftwidth=4
+    set softtabstop=4
+    set tabstop=4
+
+  " Window Navigation
+    nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-K> <C-W><C-K>
+    nnoremap <C-L> <C-W><C-L>
+    nnoremap <C-H> <C-W><C-H>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom Functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Show a diff of what's changed since the last save
+  if !exists(":DiffOrig")
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+          \ | wincmd p | diffthis
+  endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Sources
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.local/share/nvim/plugged')
+{% for group_name, group_plugins in plugin_settings_by_group.items() %}
+" {{group_name}}
+  {%- for plugin in group_plugins %}
+Plug '{{plugin['repo']}}'
+    {%- if "install_options" in plugin -%}
+      , {{plugin['install_options']}}
+    {%- endif %}
+  {%- endfor %}
+{% endfor %}
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+{% for item in plugin_settings|sort(attribute='name')%}
+" {{(item['name'] + ' ').ljust(38, '-')}}
+  {%- for line in item.get('config_text', []) %}
+  {{line}}
+  {%- endfor %}
+{% endfor %}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+  let mapleader="\<Space>"
+  let maplocalleader="\\"
+
+  " <Leader>g -- git grep for something (mnemonic: [g]it [g]rep).
+    " nnoremap <Leader>g :VcsJump grep<Space> " TODO
+
+  " filepaths
+    nnoremap <LocalLeader>p :echo expand('%')<CR>
+    " nnoremap <Leader>pp :let @0=expand('%') <Bar> :Clip<CR> :echo expand('%')<CR> " TODO Fix
+
+  " <Leader><Leader> -- Open last buffer.
+    nnoremap <Leader><Leader> <C-^>
+    nnoremap <Leader>e :edit!<CR>
+    nnoremap <Leader>o :only<CR>
+    nnoremap <Leader>q :quit<CR>
+    nnoremap <Leader>w :write<CR>
+    nnoremap <Leader>x :xit<CR>
+
+" --------------------------------------
+" Custom Functions ---------------------
+" --------------------------------------
+  " <LocalLeader>d... -- Diff mode bindings:
+    noremap <silent> <LocalLeader>do :DiffOrig<CR>
+  " - yof: toggle auto-fix on saving (mnemonic: [f] = fix)
+    noremap <silent> yof :AutoFixOnSaveToggle<CR>
+
+" --------------------------------------
+" Plugins ------------------------------
+" --------------------------------------
+{% for item in plugin_settings|sort(attribute='name')%}
+" {{(item['name'] + ' ').ljust(38, '-')}}
+  {%- for line in item.get('mappings_text', []) %}
+  {{line}}
+  {%- endfor %}
+{% endfor %}

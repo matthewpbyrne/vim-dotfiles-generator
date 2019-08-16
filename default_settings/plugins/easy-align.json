@@ -1,0 +1,9 @@
+{
+  "name": "EasyAlign",
+  "repo": "junegunn/vim-easy-align",
+  "config_text": [
+    "\" Start for visual mode and motion objects:",
+    "  xmap ga <Plug>(EasyAlign)",
+    "  nmap ga <Plug>(EasyAlign)"
+  ]
+}

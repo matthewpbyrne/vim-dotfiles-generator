@@ -1,0 +1,8 @@
+{
+  "name": "AutoClose",
+  "repo": "Townk/vim-autoclose",
+  "mappings_text": [
+    "\" - yop: toggle bracket auto-closing (mnemonic: [p] = parenthesis)",
+    "  noremap <silent> yop :AutoCloseToggle<CR>"
+  ]
+}

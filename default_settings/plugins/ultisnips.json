@@ -1,0 +1,10 @@
+{
+  "name": "UltiSnips",
+  "repo": "SirVer/ultisnips",
+  "config_text": [
+    "  let g:UltiSnipsJumpForwardTrigger = '<Tab>'",
+    "  let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'",
+    "  let g:UltiSnipsSnippetsDir = 'ultisnips'",
+    "  let g:UltiSnipsSnippetDirectories = ['ultisnips', 'ultisnips-private']"
+  ]
+}

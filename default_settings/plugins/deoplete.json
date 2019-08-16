@@ -1,0 +1,21 @@
+{
+  "name": "Deoplete",
+  "repo": "Shougo/deoplete.nvim",
+  "install_options": { "do": ":UpdateRemotePlugins" },
+  "config_text": [
+    "\" TODOs:",
+    "\" 1. figure out how to read other buffers from the get-go",
+    "\" 2. figure out if context_filetype is needed",
+    "  let g:deoplete#enable_at_startup = 1",
+    "  let g:deoplete#enable_ignore_case = 1",
+    "  let g:deoplete#enable_smart_case = 1",
+    "\" needed so deoplete can auto select the first suggestion",
+    "  set completeopt+=noinsert",
+    "\" comment this line to enable autocompletion preview window",
+    "\" (displays documentation related to the selected completion option)",
+    "  set completeopt-=preview",
+    "\" autocompletion of files and commands behaves like shell",
+    "\" (complete only the common part, list the options that match)",
+    "  set wildmode=list:longest"
+  ]
+}

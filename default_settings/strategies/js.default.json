@@ -1,0 +1,56 @@
+{
+  "name": "js.default",
+  "description": "Default JS development configuration",
+  "plugin_groups": [
+    {
+      "name": "Code Analysis",
+      "plugin_settings_files": ["ale", "syntastic"]
+    },
+    {
+      "name": "General",
+      "plugin_settings_files": ["dispatch", "eunuch", "fugitive", "unimpaired"]
+    },
+    {
+      "name": "Getting Around",
+      "plugin_settings_files": [
+        "ripgrep",
+        "fzf",
+        "fzf-vim",
+        "nerdtree",
+        "choosewin",
+        "projectionist"
+      ]
+    },
+    {
+      "name": "Readability",
+      "plugin_settings_files": ["fisa-colorscheme", "signify"]
+    },
+    {
+      "name": "Snippets + Completions",
+      "plugin_settings_files": [
+        "snippets",
+        "nerdcommenter",
+        "deoplete",
+        "ultisnips",
+        "tcomment",
+        "autoclose"
+      ]
+    },
+    {
+      "name": "Terminal-related",
+      "plugin_settings_files": ["tmux-navigator", "slime"]
+    },
+    {
+      "name": "Text Wrangling",
+      "plugin_settings_files": [
+        "easy-align",
+        "exchange",
+        "abolish",
+        "repeat",
+        "sleuth",
+        "speeddating",
+        "surround"
+      ]
+    }
+  ]
+}
